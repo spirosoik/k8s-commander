@@ -10,7 +10,7 @@ You can find an example of a k8s recipe [here](_examples/elasticsearch_recipe.go
 make run-example
 ```
 
-Check [here](`_examples/main.go`) how to run recipe with the k8s commander. Example:
+Check [here](_examples/main.go) how to run recipe with the k8s commander. Example:
 
 ```go
 	cm := commander.New()
