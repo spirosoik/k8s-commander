@@ -59,6 +59,6 @@ func (c *CreateIngressCommand) Execute() error {
 	if err != nil {
 		return err
 	}
-	c.Logger.WithField("name", c.Name).Info("ingress create")
+	c.Logger.WithField("name", c.Name).Info("ingress created")
 	return nil
 }

@@ -72,7 +72,7 @@ func (c *CreateDeployment) Execute() error {
 	if err != nil {
 		return err
 	}
-	c.Logger.WithField("name", c.Name).Info("deployment create")
+	c.Logger.WithField("name", c.Name).Info("deployment created")
 	return nil
 }
 

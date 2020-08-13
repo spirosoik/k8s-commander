@@ -28,6 +28,6 @@ func (c *CreateNamespace) Execute() error {
 	if err != nil {
 		return err
 	}
-	c.Logger.WithField("name", c.Name).Info("namespace create")
+	c.Logger.WithField("name", c.Name).Info("namespace created")
 	return nil
 }

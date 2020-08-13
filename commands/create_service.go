@@ -39,6 +39,6 @@ func (c *CreateService) Execute() error {
 	if err != nil {
 		return err
 	}
-	c.Logger.WithField("name", c.Name).Info("service create")
+	c.Logger.WithField("name", c.Name).Info("service created")
 	return nil
 }

@@ -20,8 +20,8 @@ func (c *DeleteNamespace) Execute() error {
 	if err := c.Clientset.CoreV1().Namespaces().Delete(c.Namespace, &metav1.DeleteOptions{
 		PropagationPolicy: &deletePolicy,
 	}); err != nil {
-		c.Logger.Error(err)
 		return err
 	}
+	c.Logger.WithField("name", c.Namespace).Info("namespace deleted")
 	return nil
 }
