@@ -34,9 +34,9 @@ func main() {
 	opts := recipeOpts{
 		Name:           "es",
 		Namespace:      "default",
-		ContainerImage: "elasticsearch",
+		ContainerImage: "elastic/elasticsearch",
 		ContainerPort:  9200,
-		ContainerTag:   "latest",
+		ContainerTag:   "7.8.1",
 	}
 	recipe := NewElasticsearchDeployment(opts, clientset, logger)
 
