@@ -1,4 +1,4 @@
-package orchestrator
+package commander
 
 // Command describes a command
 type Command interface {
@@ -16,16 +16,16 @@ type Executor interface {
 	Execute(r Recipe) error
 }
 
-// Cooker is a recipe executor
-type Cooker struct{}
+// Commander is a recipe executor
+type Commander struct{}
 
-// NewCommander factory method
-func NewCommander() *Cooker {
-	return &Cooker{}
+// New factory method
+func New() *Commander {
+	return &Commander{}
 }
 
 // Execute will execute the set of commands of a recipe
-func (*Cooker) Execute(r Recipe) error {
+func (*Commander) Execute(r Recipe) error {
 	for _, c := range r.Build() {
 		if err := c.Execute(); err != nil {
 			return err
