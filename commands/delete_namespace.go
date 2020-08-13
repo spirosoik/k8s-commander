@@ -7,15 +7,15 @@ import (
 	_ "k8s.io/client-go/plugin/pkg/client/auth" // // Import solely to initialize client auth plugins.
 )
 
-// DeleteDeployment deletes the deployment
-type DeleteDeployment struct {
+// DeleteNamespace deletes the namespace
+type DeleteNamespace struct {
 	Namespace string
 	Clientset *kubernetes.Clientset
 	Logger    logrus.FieldLogger
 }
 
 // Execute run the command
-func (c *DeleteDeployment) Execute() error {
+func (c *DeleteNamespace) Execute() error {
 	deletePolicy := metav1.DeletePropagationForeground
 	if err := c.Clientset.CoreV1().Namespaces().Delete(c.Namespace, &metav1.DeleteOptions{
 		PropagationPolicy: &deletePolicy,
